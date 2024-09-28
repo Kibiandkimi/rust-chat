@@ -21,10 +21,13 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.2.1-node20
       with:
-        name: rust-test.exe
-        path: ./target/*/rust-test.exe
-        # path: ./target/debug/rust-test.exe
-        # path: ./target/release/rust-test.exe
+        name: rust-test-debug.exe
+        path: ./target/debug/rust-test.exe
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.2.1-node20
+      with:
+        name: rust-test-release.exe
+        path: ./target/release/rust-test.exe
 
   build-on-linux:
 
@@ -40,10 +43,13 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.2.1-node20
       with:
-        name: rust-test
-        path: ./target/*/rust-test
-        # path: ./target/debug/rust-test
-        # path: ./target/release/rust-test
+        name: rust-test-debug
+        path: ./target/debug/rust-test
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.2.1-node20
+      with:
+        name: rust-test-release
+        path: ./target/release/rust-test
     
         
     

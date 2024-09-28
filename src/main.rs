@@ -112,7 +112,7 @@ async fn send(address: &String, message: &String) {
 }
 
 fn output(message: String) {
-    let mut stream = std::net::TcpStream::connect("localhost::7879").unwrap();
+    let mut stream = std::net::TcpStream::connect("localhost:7879").unwrap();
     stream.write(message.as_bytes()).unwrap();
 }
 

@@ -64,9 +64,11 @@ async fn process(mut socket: TcpStream, address: SocketAddr, ip_list: IpList) {
 
     match &query_type[..] {
         "oneshot" => {
-            while let Some(message) = line_iter.next_line().await.unwrap() {
-                output(message);
+            let mut message;
+            while let Some(line) = line_iter.next_line().await.unwrap() {
+                message += &line;
             }
+            output(message);
         },
         "broadcast" => {
             let addr: Vec<_>;

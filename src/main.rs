@@ -64,7 +64,7 @@ async fn process(mut socket: TcpStream, address: SocketAddr, ip_list: IpList) {
 
     match &query_type[..] {
         "oneshot" => {
-            let mut message;
+            let mut message = String::new();
             while let Some(line) = line_iter.next_line().await.unwrap() {
                 message += &line;
             }
